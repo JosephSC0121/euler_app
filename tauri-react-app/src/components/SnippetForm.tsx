@@ -16,11 +16,14 @@ function SnippetForm() {
         setSnippetName(' ')
         addSnippetName(snippetName)
     }}>
-        <input type="text"
-        placeholder="Escribe tu codigo!"
-        className="bg-zinc-900 w-full border-none outline-none p-4"
+        <input
+        type="text"
+        placeholder="Write a Snippet"
         onChange={(e) => setSnippetName(e.target.value)}
-        />
+        className="bg-zinc-900 w-full border-none outline-none p-4"
+        autoFocus
+        value={snippetName}
+      />
         <button className="hidden">
             Save
         </button>

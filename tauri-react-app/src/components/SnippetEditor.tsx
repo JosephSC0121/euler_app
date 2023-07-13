@@ -12,7 +12,7 @@ function SnippetEditor() {
     const saveText = setTimeout(async()=>{
       console.log("saving")
       const desktopPath = await desktopDir()
-      await writeTextFile(`${desktopPath}/taurifiles/${SelectedSnippet}.js`, text ?? "")
+      await writeTextFile(`${desktopPath}/taurifiles/${SelectedSnippet.name}.js`, text ?? "")
     }, 1000)
 
     return() => {
@@ -29,6 +29,7 @@ function SnippetEditor() {
             fontSize: 20,
           }}
           onChange={(value) => setText(value)}
+          value={SelectedSnippet?.code?? ""}
         />
       ) : (
         <h1>No snippet selected</h1>
